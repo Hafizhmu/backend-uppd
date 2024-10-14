@@ -12,7 +12,8 @@ Route::get('/user', function (Request $request) {
 
 //GET
 Route::get('index', action: [BeritaController::class, 'index']);
-Route::get('getImage/{id}', action: [BeritaController::class, 'getImage']);
+Route::get('beritaAwal', action: [BeritaController::class, 'beritaAwal']);
+Route::get('getImage', action: [BeritaController::class, 'getImage']);
 Route::get('berita/{id}', action: [BeritaController::class, 'show']);
 
 
@@ -20,8 +21,8 @@ Route::get('berita/{id}', action: [BeritaController::class, 'show']);
 
 
 
-
-
+//PUT
+Route::post('update/berita/{id}', action: [BeritaController::class, 'update']);
 
 
 

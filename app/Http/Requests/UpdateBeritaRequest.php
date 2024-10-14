@@ -11,7 +11,7 @@ class UpdateBeritaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,20 @@ class UpdateBeritaRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        if (request()->isMethod('put')) {
+            return [
+                'judul_berita' => 'nullable|string',
+                'isi_berita' => 'nullable|string',
+                'tanggal' => 'nullable|string',
+                'gambar' => 'nullable|file|mimes:png,jpg,jpeg'
+            ];
+        } else {
+            return [
+                'judul_berita' => 'nullable|string',
+                'isi_berita' => 'nullable|string',
+                'tanggal' => 'nullable|string',
+                'gambar' => 'nullable|file|mimes:png,jpg,jpeg'
+            ];
+        }
     }
 }

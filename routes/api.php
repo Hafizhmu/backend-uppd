@@ -28,3 +28,6 @@ Route::post('update/berita/{id}', action: [BeritaController::class, 'update']);
 
 //POST
 Route::post('add/berita', action: [BeritaController::class, 'store']);
+
+
+Route::destroy('add/berita', action: [BeritaController::class, 'store']);
